@@ -21,9 +21,9 @@ export const routes = (app: Application) => {
     app.use(morgan("dev"));
   }
   // server static files in upload folder
-  app.use("/", async (req: Request, res: Response) => {
-    return res.status(200).json("hello world");
-  });
+  // app.use("/", async (req: Request, res: Response) => {
+  //   return res.status(200).json("hello world");
+  // });
   app.use("/uploads", express.static("uploads"));
   app.use("/api/users", userRouter); //routes of user admin
   // note reasons for using /api/admin/home instead of /api/home because these route will need admin authentication to access and better redability
